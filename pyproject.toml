@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "h3xonize"
+version = "0.1.0"
+description = ""
+authors = ["pt20 <th.prayag@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+xarray = "^2022.11.0"
+netCDF4 = "^1.6.2"
+h3 = "^3.7.6"
+s3fs = "^2022.11.0"
+pyarrow = "^10.0.0"
+h3ronpy = "^0.15.1"
+rioxarray = "^0.13.1"
+geopandas = "^0.12.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+black = "^22.10.0"
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+pytest-cov = "^4.0.0"
+mypy = "^0.991"
+pre-commit = "^2.20.0"
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
