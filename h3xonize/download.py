@@ -20,7 +20,3 @@ def download_data(uri: str, data_dir: str = "data/") -> None:
 
     print(f"Downloading {os.path.basename(uri)} to {data_dir} ...")
     S3.get(uri, data_dir)
-
-
-uri = "s3://era5-pds/2022/05/data/precipitation_amount_1hour_Accumulation.nc"
-download_data(uri)

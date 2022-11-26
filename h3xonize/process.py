@@ -59,12 +59,3 @@ def to_parquet(dataset: xr.Dataset, data_var_name: str, dest_dir: str) -> None:
             index=False,
             compression="zstd",
         )
-
-
-ds = prepare_dataset(
-    "/home/prayag/projects/h3xonize/data/precipitation_amount_1hour_Accumulation.nc"
-)
-data_var = "precipitation_amount_1hour_Accumulation"
-dest_dir = "data/"
-
-to_parquet(ds, data_var, dest_dir)
