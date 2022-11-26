@@ -1,0 +1,33 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+  - repo: local
+    hooks:
+      - id: black
+        name: black formatting
+        language: system
+        types: [python]
+        entry: poetry run black
+
+      - id: isort
+        name: isort import sorting
+        language: system
+        types: [python]
+        entry: poetry run isort --profile=black
+
+      - id: flake8
+        name: flake8 formatting
+        language: system
+        types: [python]
+        entry: poetry run flake8 --config=.flake8
+
+      - id: mypy
+        name: mypy type checker
+        language: system
+        types: [python]
+        entry: poetry run mypy --config-file=mypy.ini
+        exclude: ^tests/
